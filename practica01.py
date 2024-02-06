@@ -21,7 +21,7 @@ def procesarLinea(linea):
     
     sgundaCadena = partes[2]
     
-    ip = partes[6].split('.')
+    ip = partes[-1].split('.')
     hex_ip = '.'.join(f"{int(x):X}" for x in ip)
     
     resultado = f"{sgundaCadena} : {' : '.join(map(str, deimales))} : {hex_ip}"
