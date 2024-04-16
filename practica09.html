@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #img1 {
+            position: absolute;
+            top: 0px;
+        }
+        #img2 {
+            position: absolute;
+            left: 0px;
+        }
+    </style>
+</head>
+<body>
+    <img id="img1" src="./imagen1.png" width="100" height="100">
+    <img id="img2" src="./imagen2.png" width="100" height="100">
+
+    <script>
+        const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
+        async function moveImage1() {
+            const img1 = document.getElementById('img1');
+            for (let i = 0; i < 1000; i++) {
+                img1.style.top = `${i}px`;
+                await sleep(20);
+            }
+        }
+
+        async function moveImage2() {
+            const img2 = document.getElementById('img2');
+            for (let i = 0; i < 1000; i++) {
+                img2.style.left = `${i}px`;
+                await sleep(20);
+            }
+        }
+
+        moveImage1();
+        moveImage2();
+
+        console.log("Ejecutando programa")
+    </script>
+</body>
+</html>
